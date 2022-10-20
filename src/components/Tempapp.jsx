@@ -47,8 +47,8 @@ export const Tempapp = () => {
     <div className='tempandimage'>
 
      <div className='temprature'>
-    <h1>{city.main.temp}<span>&deg;C</span></h1>
-    <p className='feelsLike'>Feels Like  {city.main.feels_like}&deg;C</p>
+    <h1>{Math.floor(city.main.temp)}<span>&deg;C</span></h1>
+    <p className='feelsLike'>Feels Like  {Math.round(city.main.feels_like)}&deg;C</p>
      </div>
 
     <div className='location'>
