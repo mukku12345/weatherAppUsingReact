@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState,useEffect } from 'react';
-import Axios from "axios";
 import './style.scss'
 
 export const Tempapp = () => {
@@ -8,13 +7,16 @@ export const Tempapp = () => {
     const[city,setCity]=useState(null);
     const[search,setSearch]=useState("Delhi");
 
-    const fetchWeather = async (e) => {
+    const fetchWeather = async (e)=>{
         e.preventDefault();
-        const response = await Axios.get(
-          `http://api.weatherstack.com/current?access_key=1c8541cdb10f2d5719a07207dbfb256e&query=${search}`,
-        );
-        setCity(response.data);
-      };
+        const url=`http://api.weatherstack.com/current?access_key=1c8541cdb10f2d5719a07207dbfb256e&query=${search}`
+         const response=await fetch(url)
+         const data=await response.json()
+         setCity(data);
+    }
+    useEffect(()=>{
+        fetchWeather();
+    },[])
 
    
 
