@@ -11,7 +11,7 @@ export const Tempapp = () => {
     const fetchWeather = async (e) => {
         e.preventDefault();
         const response = await Axios.get(
-          `http://api.weatherstack.com/current?access_key=e1cf051122f19456f91587a2729ce45b&query=${search}`,
+          `http://api.weatherstack.com/current?access_key=1c8541cdb10f2d5719a07207dbfb256e&query=${search}`,
         );
         setCity(response.data);
       };
